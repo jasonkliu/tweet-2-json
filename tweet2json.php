@@ -25,8 +25,8 @@ $finders = array(
 	
 	'avatar-regex'           => 	array(
 										'user'   => '/href\="([\/A-z0-9-_]*)/',
-										'id'     => '/data-user-id\="([0-9-_]*)/',
-										'img'    => '/src\="([A-z0-9\-\_\:\/\/\.]*)/',
+										//'id'     => '/data-user-id\="([0-9-_]*)/',
+										//'img'    => '/src\="([A-z0-9\-\_\:\/\/\.]*)/',
 										'name'   => '/alt\="([A-z0-9\-\_\:\/\/\.\s]*)/'
 									),
 									
@@ -228,12 +228,12 @@ function scrape_spit ($user_target, $search, $find_cards, $itr, $realtime = FALS
 		$each_tweet = array(
 			'url'	 => 'http://twitter.com'.$links[$i],
 			'text'   => html_entity_decode(str_replace($html_scrubs, $html_ringers, strip_tags($tweets[$i]))),
-			'html'  => $tweets[$i],
+			//'html'  => $tweets[$i],       // remove unneeded fields
 			'date' 	 => $dates[$i],
 			'user'   => $avatars[$i][0],
-			'id'     => $avatars[$i][1],
-			'img'    => $avatars[$i][2],
-			'name'   => $avatars[$i][3],
+			//'id'     => $avatars[$i][1],  // remove unneeded fields
+			//'img'    => $avatars[$i][2],  // remove unneeded fields
+			//'name'   => $avatars[$i][3],  // remove unneeded fields
 			'rt'     => $is_rt,
 		);
 	
@@ -246,7 +246,6 @@ function scrape_spit ($user_target, $search, $find_cards, $itr, $realtime = FALS
 				unset($each_tweet['card']);
 			}
 		}
-		//echo "\r\n" // put a newline
 		array_push($all_tweets, $each_tweet);
 	}
 
@@ -276,9 +275,12 @@ function search_tweets($query, $itr = 0, $find_cards = FALSE, $realtime = TRUE) 
 
 /*THIS IS WHERE YOU MAKE EDITS TO CHANGE WHAT THIS SCRIPT RETURNS*/
 
-echo user_tweets('cosmocatalano', 2);
-
+// Samples: 
+//echo user_tweets('cosmocatalano', 2);
 //echo search_tweets('obama');
+
+//echo user_tweets('SacramentoKings', 8);
+echo search_tweets('#ForeverPurple');
 
 
 ?>
