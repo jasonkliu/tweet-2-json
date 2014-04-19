@@ -276,11 +276,11 @@ function search_tweets($query, $itr = 0, $find_cards = FALSE, $realtime = TRUE) 
 /*THIS IS WHERE YOU MAKE EDITS TO CHANGE WHAT THIS SCRIPT RETURNS*/
 
 // Samples: 
-//echo user_tweets('cosmocatalano', 2);
+//echo user_tweets('cosmocatalano', 20);
 //echo search_tweets('obama');
 
-//echo user_tweets('SacramentoKings', 8);
-echo search_tweets('#ForeverPurple');
+echo user_tweets('SacramentoKings', 20);
+//echo search_tweets('#ForeverPurple');
 
 
 ?>
