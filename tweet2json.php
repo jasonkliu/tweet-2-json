@@ -246,6 +246,7 @@ function scrape_spit ($user_target, $search, $find_cards, $itr, $realtime = FALS
 				unset($each_tweet['card']);
 			}
 		}
+		//echo "\r\n" // put a newline
 		array_push($all_tweets, $each_tweet);
 	}
 
@@ -275,7 +276,7 @@ function search_tweets($query, $itr = 0, $find_cards = FALSE, $realtime = TRUE) 
 
 /*THIS IS WHERE YOU MAKE EDITS TO CHANGE WHAT THIS SCRIPT RETURNS*/
 
-echo user_tweets('cosmocatalano', 1);
+echo user_tweets('cosmocatalano', 2);
 
 //echo search_tweets('obama');
 
